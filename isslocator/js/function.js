@@ -79,16 +79,7 @@ function myFunction()
         // '<br>Longtitude:' + data[i].longitude ;
         mainContainer.appendChild(tableBody);
 
-        // async function loadTable(url, table) {
-        //   const tableHead = table.querySelector("thead");
-        //   const tableBody = table.querySelector("tbody");
-        //   const response = await fetch('https://api.wheretheiss.at/v1/satellites/25544/positions?timestamps='+time[1]+'&units=miles');
-        //   const { headers, rows } = await response.json();
 
-        //   console.log(data);
-        // }
-
-        // loadTable("./data.json", document.querySelector("table"));
         
        
       }
