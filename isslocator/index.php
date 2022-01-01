@@ -18,11 +18,9 @@
 
 	<?php include ('iss-locator.php') ?>
 
-	<?php include ('map.php') ?>
+			<?php include ('issmap.php'); ?>
 
 </body>
-
-
 
 <?php include ('footer.php') ?>
 
