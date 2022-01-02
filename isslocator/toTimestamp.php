@@ -59,7 +59,7 @@ for ($t = 7; $t <= 12; $t++) {
 
           <table class="tableCoor">
             <thead>
-            <tr class="tableCoor">
+            <tr class="tableCoor-head">
                 <th>Timestamp</th> 
                 <th>Id</th> 
                 <th>Name</th> 
