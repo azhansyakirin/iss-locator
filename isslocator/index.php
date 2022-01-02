@@ -4,23 +4,23 @@
 
 <body>
 
-	<div class="banner">
+	<div class="wrapper">
 
+		<h1><a href="index.php">International Space Station</a></h1>
+		<p>Track the ISS here</p>
+		<hr>
 
+		<?php include ('iss-locator.php') ?>
 
-        <div id="particles-js"></div>
+		<?php include ('issmap.php'); ?>
 
-	    <script src="jquery/jquery-3.2.1.min.js"></script>
-	    <script src="js/particles.js"></script>
-	    <script src="js/app.js"></script>
+		<?php include ('footer.php') ?>
 
 	</div>
 
-	<?php include ('iss-locator.php') ?>
 
-			<?php include ('issmap.php'); ?>
 
 </body>
 
-<?php include ('footer.php') ?>
+
 

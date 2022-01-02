@@ -1,46 +1,45 @@
-<div id="mapid"></div>
+<section class="issmap">
 
-    <!-- Javascript parts -->
-        <script>
-            const attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
-            const mymap = L.map('mapid').setView([0, 0], 2);
+   <div id="mapid"></div>     
 
-            var iss_icon = L.icon({
-                iconUrl: 'img/iss.png',
-                iconSize: [100, 64]
-            });
-            const marker = L.marker([0, 0], {icon: iss_icon}).addTo(mymap);
+        <!-- Javascript parts -->
+            <script>
+                const attribution = '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
+                const peta = L.map('mapid').setView([0, 0], 2);
 
-            
-            
+                var iss_icon = L.icon({
+                    iconUrl: 'img/iss2.png',
+                    iconSize: [100, 64]
+                });
+                const marker = L.marker([0, 0], {icon: iss_icon}).addTo(peta);
 
-            //const tileUrl = 'http://a.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png';
-            //const tileUrl =  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-            const tileUrl =  'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
-            const tiles = L.tileLayer(tileUrl, { attribution });
-            tiles.addTo(mymap);
+                const tileUrl =  'https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png';
+                const tiles = L.tileLayer(tileUrl, { attribution });
+                tiles.addTo(peta);
 
-            const API_URL = 'https://api.wheretheiss.at/v1/satellites/25544';
-            async function getData(){
-                const response = await fetch(API_URL);
-                const data = await response.json();
-                console.log(data)
-                const { latitude, longitude } = data;
+                const API_URL = 'https://api.wheretheiss.at/v1/satellites/25544';
 
-                mymap.setView([latitude, longitude], 2);
-                marker.setLatLng([latitude, longitude]);
+                async function getData(){
+                    const response = await fetch(API_URL);
+                    const data = await response.json();
+                    console.log(data)
+                    const { latitude, longitude, footprint } = data;
 
-                var popup = L.popup()
-                .setLatLng([latitude, longitude])
-                .setContent('Latitude: ' + latitude.toFixed(2) +  '<br>longitude: ' + longitude.toFixed(2))
-                .openOn(mymap);
-                marker.bindPopup(popup).openPopup();
-                
+                    peta.setView([latitude, longitude, footprint], 3);
+                    marker.setLatLng([latitude, longitude, footprint]);
 
-                document.getElementById('lat').textContent = latitude;
-                document.getElementById('lon').textContent = longitude;
-            }
+                    var popup = L.popup()
+                    .setLatLng([latitude, longitude, footprint])
+                    .setContent('Latitude: ' + latitude.toFixed(3) +  '<br>Longitude: ' + longitude.toFixed(3) + '<br>Footprint: ' + footprint.toFixed(3))
+                    .openOn(peta);
+                    marker.bindPopup(popup).openPopup();
+                    
+                }
 
-            getData();
-            //setInterval(getData, 1000);
-        </script>
+                getData();
+
+                setInterval(getData, 1000);
+
+            </script>
+
+</section>
