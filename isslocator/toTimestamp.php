@@ -1,5 +1,7 @@
 <?php include ('header.php') ?>
 
+<title>ISS Locator</title>
+
 <?php 
 
 $getTime = $_POST['issDatetime'];
