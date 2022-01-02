@@ -21,7 +21,7 @@ for ($t = 7; $t <= 12; $t++) {
 } ?>
 
 
-  <div class="wrapper">
+<div class="wrapper">
 
     <h1><a href="index.php">International Space Station</a></h1>
     <p>Track the ISS here</p>
@@ -57,9 +57,9 @@ for ($t = 7; $t <= 12; $t++) {
 
       ?>
 
-          <table class="table100">
+          <table class="tableCoor">
             <thead>
-            <tr class="table100-head">
+            <tr class="tableCoor">
                 <th>Timestamp</th> 
                 <th>Id</th> 
                 <th>Name</th> 
@@ -73,8 +73,8 @@ for ($t = 7; $t <= 12; $t++) {
 
                 <tr>
                     <td><?php echo $value -> timestamp ?> </td>
-                    <td id="ids"><?php echo $value -> id ?> </td> 
-                    <td id="names"><?php echo $value -> name ?> </td> 
+                    <td><?php echo $value -> id ?> </td> 
+                    <td><?php echo $value -> name ?> </td> 
                     <td><?php echo $value -> latitude ?> </td>
                     <td><?php echo $value -> longitude ?> </td>
 
@@ -88,11 +88,10 @@ for ($t = 7; $t <= 12; $t++) {
         <p id="legend">Timestamp 7 : Selected Time & Date <br>Timestamp 0-5 : 10 minutes backward <br>Timestamp 7-12 : 10 minutes forward </p>
         <br>
 
-
     </div>
 
     <?php include ('issmap.php'); ?>
 
-    <?php include ('footer.php') ?>
+    <?php include ('footer.php'); ?>
 
-  </div>
+</div>
