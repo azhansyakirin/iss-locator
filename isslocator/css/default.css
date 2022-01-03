@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Poppins&display=swap');
 
 *
 {
@@ -127,6 +127,15 @@ header
 	margin-left: auto;
 }
 
+/* Container */
+
+.container
+{
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /* Table Coordinate */
 
 .wrap-table100 {
@@ -142,6 +151,8 @@ table {
   width: 100%;
   margin: 0 auto;
   position: relative;
+  margin-bottom: 3em;
+  border: 1px solid black;
 }
 table * {
   position: relative;
@@ -166,6 +177,12 @@ table tbody tr {
   text-align: left;
 }
 
+.tableCoor-body tr, td{
+	border: 1px solid black;
+  }
+
+
+
 tbody tr:nth-child(even) {
   background-color: #f5f5f5;
 }
@@ -182,6 +199,40 @@ tbody tr:hover {
   color: #555555;
   background-color: #f5f5f5;
   cursor: pointer;
+}
+
+
+.tablePeople-head th{
+font-family: 'Montserrat';
+font-size: 16px;
+color: #fff;
+line-height: 1.2;
+font-weight: unset;
+text-align: center;
+}
+
+.tablePeople-body tr, td{
+	border: 1px solid black;
+}
+
+
+
+tbody tr:nth-child(even) {
+background-color: #f5f5f5;
+}
+
+.tablePeople td {
+font-family: 'Poppins';
+font-size: 15px;
+color: #808080;
+line-height: 1.2;
+font-weight: unset;
+}
+
+.tablePeople-body td:hover {
+color: #555555;
+background-color: #f5f5f5;
+cursor: pointer;
 }
 
 
@@ -277,6 +328,7 @@ input[type=datetime-local]:focus {
 	color: #fff;
 	font-weight: 200;
 	font-size: 8pt;
+	font-family: 'Montserrat';
 }
 
 @media (max-width:991px)
