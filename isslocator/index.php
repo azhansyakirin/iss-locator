@@ -14,6 +14,8 @@
 
 		<?php include ('issmap.php'); ?>
 
+		<?php include ('people.php'); ?>
+
 		<?php include ('footer.php') ?>
 
 	</div>
